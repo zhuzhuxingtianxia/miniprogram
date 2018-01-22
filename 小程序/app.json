@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/组件/wxTest/page1",
+    "pages/组件/view/view",
+    "pages/分类/classify/classify",
+    "pages/发现/find/find",
+    "pages/购物车/cart/cart",
+    "pages/我的/my/my",
+    "pages/组件/scroll-view/scroll-view"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF0033",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#ff0000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "imgSource/tabbarIcon/home.png",
+        "selectedIconPath": "imgSource/tabbarIcon/home_press.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/分类/classify/classify",
+        "iconPath": "imgSource/tabbarIcon/category.png",
+        "selectedIconPath": "imgSource/tabbarIcon/category_press.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/发现/find/find",
+        "iconPath": "imgSource/tabbarIcon/find_normal.png",
+        "selectedIconPath": "imgSource/tabbarIcon/find_normal_press.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/购物车/cart/cart",
+        "iconPath": "imgSource/tabbarIcon/cart_normal.png",
+        "selectedIconPath": "imgSource/tabbarIcon/cart_normal_press.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/我的/my/my",
+        "iconPath": "imgSource/tabbarIcon/my_normal.png",
+        "selectedIconPath": "imgSource/tabbarIcon/my_normal_press.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

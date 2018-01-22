@@ -1,0 +1,12 @@
+<!--pages/组件/view/view.wxml-->
+<view class='view1'>2</view>
+<view class='viewContainer1'>
+  <view class='view10' style="background-color:orange;"></view>
+  <view class='view10' style="background-color:green;"></view>
+  <view class='view10' style="background-color:blue;"></view>
+</view>
+<view class='viewContainer2'>
+  <view class='view10' style="background-color:orange;"></view>
+  <view class='view10' style="background-color:green;"></view>
+  <view class='view10' style="background-color:blue;"></view>
+</view>

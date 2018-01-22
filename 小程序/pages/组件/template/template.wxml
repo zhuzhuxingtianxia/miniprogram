@@ -1,0 +1,9 @@
+<!-- 自定义模版 -->
+<template name="head">
+  <view class='page-head'>
+    <view wx:if='{{title}}' class='page-head-title'>{{title}}</view>
+    <block wx:else>
+      <view class='page-head-title'>标题</view>
+    </block>
+  </view>
+</template>

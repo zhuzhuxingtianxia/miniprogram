@@ -1,0 +1,8 @@
+/**index.wxss**/
+.viewLayout {
+  margin-top: 20px;
+}
+
+.login {
+  margin-top: 20px;
+}

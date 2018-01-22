@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='test'>
+    <button bindtap='bindTestAction'>小程序组件demo</button>
+  </view>
+  <view class='viewLayout'>
+    <button bindtap='bindViewAction'>View组件练习</button>
+  </view>
+  <view class='viewLayout'>
+    <button bindtap='bindScrollViewAction'>scroll-view组件</button>
+  </view>
+  <view class='login'>
+    <button bindtap='bindLoginAction'>登陆小程序</button>
+  </view>
+</view>
