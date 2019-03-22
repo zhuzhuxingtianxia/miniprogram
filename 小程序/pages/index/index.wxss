@@ -1,4 +1,7 @@
 /**index.wxss**/
+.container {
+  background-color: #f5f5f5;
+}
 .viewLayout {
   margin-top: 20px;
 }

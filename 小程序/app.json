@@ -1,15 +1,16 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/login/login",
     "pages/组件/wxTest/page1",
     "pages/组件/view/view",
     "pages/分类/classify/classify",
     "pages/发现/find/find",
     "pages/购物车/cart/cart",
     "pages/我的/my/my",
-    "pages/组件/scroll-view/scroll-view"
+    "pages/组件/scroll-view/scroll-view",
+    "pages/组件/wxTest/page2"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -54,5 +55,9 @@
         "text": "我的"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "downloadFile": 120000
   }
 }

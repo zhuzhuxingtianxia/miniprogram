@@ -1,64 +1,169 @@
 // pages/login/login.js
-//获取应用实例
-const app = getApp()
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    motto: '你好，小程序',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    timer: null,
+    countDown: "发送验证码",
+    codeBtnEnable: false,//发送验证码按钮是否可点击
+    validPhone: false,//是否有效的手机号
+    phoneNumber: "",
+    codeText: "",
+    selectAgree: true,//是否选中协议
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
+  /**
+   * 输入手机号事件
+   */
+  bindInputPhone(e) {
+    console.log("输入值：", e.detail)
+    let number = e.detail.value
+    if (number.length >= 11) {
+      if (this.isPhoneAvailable(number)) {
+        console.log("有效的额手机号")
         this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+          codeBtnEnable: true,
+          validPhone: true
+        })
+      } else {
+        console.log("手机号无效")
+        wx.showToast({
+          title: '手机号无效',
+          icon: 'none',
+          duration: 2000
         })
       }
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+      this.setData({
+        codeBtnEnable: false,
+        validPhone: false
       })
     }
   },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  /**
+   * 获取验证码
+   */
+  getVerCode(e) {
+    this.onCountDown()
+    console.log("获取验证码")
+  },
+  /**
+   * 输入验证码事件
+   */
+  bindInputVerCode(e) {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      codeText: e.detail.value
     })
+  },
+  //倒计时
+  onCountDown: function () {
+    const that = this;
+    if (!that.data.codeBtnEnable) return;
+    var second = 59;
+    this.setData({
+      countDown: second + "秒",
+      codeBtnEnable: false
+    })
+    that.timer = setInterval(function () {
+      console.log('倒计时')
+      second = second - 1;
+      if (second <= 0) {
+        clearInterval(that.timer);
+        that.setData({
+          countDown: "重获验证码",
+          codeBtnEnable: true
+        })
+
+      } else {
+        that.setData({
+          countDown: second + "秒",
+        })
+
+      }
+    }, 1000);
+  },
+  /**
+   * 选择协议事件
+   */
+  selectAgreeeAction(e) {
+    this.setData({
+      selectAgree: !this.data.selectAgree
+    })
+  },
+  /**
+   * 登录事件
+   */
+  loginAction(event) {
+    console.log("登录操作")
+    wx.switchTab({
+      url: '../index/index',
+    })
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    wx.showToast({
-      title: '登陆成功',
-      icon: 'success',
-      duration: 1000
-    })
-  }
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    //取消定时任务
+    clearInterval(this.data.timer);
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  //手机号验证
+  isPhoneAvailable: function (str) {
+    var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+    if (!reg.test(str)) {
+      return false;
+    } else {
+      return true;
+    }
+  },
 })

@@ -1,15 +1,46 @@
 <!--pages/login/login.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <!-- 添加本地图片 -->
-      <image class="userinfo-avatar" src="/imgSource/laop.png" background-size="cover"></image>
-    </block>
+<view class='wrapper'>
+  <view class='phone-container'>
+    <image style="width: 34rpx; height: 46rpx; background-color: #eeeeee;"
+           src="/imgSource/localImg/loginPhoneIcon.png"
+           mode='aspectFit'></image>
+    <!-- 输入手机号 -->
+    <input class='input-style'
+           maxlength="11"
+           focus="true"
+           placeholder="请输入有效的手机号"
+           bindinput="bindInputPhone"
+           type="number"></input>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='code-view'>
+    <view class='inputcode-div'>
+      <input class='input-style'
+             maxlength="6"
+             type="number"
+             bindinput="bindInputVerCode"
+             placeholder="输入验证码"></input>
+    </view>
+    <button wx:if="{{codeBtnEnable}}" 
+            class='get-code-btn' hover-class="btnhover"
+            bindtap="getVerCode">{{ countDown }}</button>
+    <button wx:else class='get-code-btn'
+            disabled="false">{{ countDown }}</button>
   </view>
+  <view class='protocol'>
+  <!-- image绑定设置 -->
+    <image style='width: 40rpx;height: 40rpx;background-color:#f5f5f5;margin:10rpx'
+          mode='aspectFit'
+          src="{{selectAgree ? '/imgSource/localImg/loginAgreeicon.png' : '/imgSource/localImg/loginUnagreeicon.png'}}"
+          bindtap="selectAgreeeAction"></image>
+    <text class='text-font'>我同意</text>
+    <text class='text-font text-red'>《服务协议》</text>
+    <text class='text-font'>和</text>
+    <text class='text-font text-red'>《隐私权协议》</text>
+  </view>
+  <!-- 登录按钮设置 -->
+  <button wx:if="{{validPhone&&codeText.length>=4&&selectAgree}}" 
+          class='login' hover-class="btnhover"
+          bindtap="loginAction">登录</button>
+  <button wx:else class='login' disabled="false">登录</button> 
 </view>
+
