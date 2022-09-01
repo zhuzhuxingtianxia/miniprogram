@@ -1,0 +1,107 @@
+/* pages/home/home.wxss */
+page {
+  height: 100%;
+  background-color: rgb(250, 247, 252);
+  box-sizing: border-box;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 10rpx);
+}
+
+.nav-header-text {
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  &:active {
+    background-color: #333;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.home-page {
+  background-color: aquamarine;
+  .swiper-container {
+    position: relative;
+    .swiper {
+      height: 658px;
+      // 设置指示器到底部的距离
+      .wx-swiper-dots.wx-swiper-dots-horizontal {
+        margin-bottom: 100px;
+      }
+      .wx-swiper-dot {
+        display: inline-flex;
+        width: 20px;
+        height: 2px;
+        &::before {
+          content: "";
+          flex-grow: 1;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 2px;
+        }
+      }
+      .wx-swiper-dot-active {
+        display: inline-flex;
+        width: 30px;
+        height: 2px;
+        &::before {
+          background: rgba(0, 0, 0, 0.8);
+        }
+      }
+
+    }
+
+    .swiper-item {
+      height: 100%;
+      .swiper-item__img {
+        width: 100%;
+        height: 100%;
+      }
+  
+    }
+
+    .swiper-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #e3e4d900 40%, #696b68b6 100%);
+      .button {
+        color: white;
+        background-color: black;
+        text-align: center;
+        line-height: 46px;
+        width: 90%;
+        border-radius: 23px;
+        &:active {
+          background-color: #333;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      .know-more {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 15px;
+        image {
+          width: 28rpx;
+          height: 30rpx;
+        }
+        span {
+          color: rgb(250, 250, 250);
+          font-size: 14px;
+          padding: 0 5px;
+        }
+
+      }
+
+    }
+
+  }
+  
+
+}

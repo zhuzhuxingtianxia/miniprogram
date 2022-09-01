@@ -1,0 +1,5 @@
+<!--pages/user/my/index.wxml-->
+<opacity-nav back="false">
+  <image slot="icon" src="/sources/home/logo.png" style="height: 50rpx;width: 250rpx;"/>
+</opacity-nav>
+<view class="container"></view>

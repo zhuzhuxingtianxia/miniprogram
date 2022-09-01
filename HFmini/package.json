@@ -1,0 +1,17 @@
+{
+  "name": "miniprogram-ts-less-quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app.ts",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "dayjs": "^1.9.3"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^3.5.0"
+  }
+}

@@ -1,0 +1,18 @@
+<!--components/my-nav/index.wxml-->
+<view class="my-nav" style="{{style}}">
+  <view class="status-bar" style="{{statusBarStyle}}"/>
+  <view class="nav-bar" style="{{navBarStyle}}">
+    <block wx:if="{{title != undefined && title.length > 0}}">{{title}}</block>
+    <slot wx:else></slot>
+    <view class="left-icons">
+      <image wx:if="{{back == true}}" 
+            bindtap="backClick" 
+            class="back-image" mode="widthFix" 
+            src="{{backImg ?? '/sources/home/arrow-left-black.png'}}"/>
+      <image wx:if="{{home == true}}" 
+            bindtap="homeClick"
+            class="home-image" mode="widthFix" 
+            src="/sources/tabbar/1-on.png"/>
+    </view>
+  </view>
+</view>
