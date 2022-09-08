@@ -1,0 +1,45 @@
+/* pages/home/index/component/float-card/index.wxss */
+
+.float-card {
+  position: fixed;
+  top: 40vh;
+  background-color: rgba(255, 255, 255, 0.432);
+  padding: 5px;
+  right: 10px;
+  width: 60px;
+  height: 150px;
+  border: white 1rpx solid;
+  border-radius: 60px;
+
+  .float-card--box {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .float-card-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 300;
+      margin: 0 5px;
+      &:first-child {
+        border-bottom: #d5d5d5 solid 1rpx;
+        margin-bottom: 10px;
+        
+      }
+      .text {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        &:last-child {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

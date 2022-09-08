@@ -1,2 +1,7 @@
 <!--pages/plan/index.wxml-->
-<view class="plan-page"></view>
+<view class="plan-page">
+  <emty-view img="/sources/default/b.png"
+            subtitle="暂未发现您有可使用的检测报告，请先完成皮肤检测后进行问诊，问诊后将展示您的治疗方案"
+            bind:button="onCheckFace"
+  ></emty-view>
+</view>

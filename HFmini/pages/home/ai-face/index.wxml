@@ -1,0 +1,14 @@
+<!--pages/home/ai-face/index.wxml-->
+<opacity-nav backImg="/sources/home/arrow-left-white.png">
+  <text style="color: white;">AI痘痘检测</text>
+</opacity-nav>
+<view class="ai-face">
+  <view style="background-color: tomato; height: 300px;"></view>
+  <text>pages/home/ai-face/index.wxml</text>
+  <view style="background-color: rgb(71, 255, 200); height: 300px;"></view>
+  <view style="background-color: rgb(111, 71, 255); flex: 1;"></view>
+  <view style="background-color: rgb(71, 157, 255); height: 300px;"></view>
+  <view style="background-color: rgb(255, 71, 230); height: 300px;"></view>
+  <view style="background-color: rgb(255, 71, 95); height: 300px;"></view>
+  
+</view>

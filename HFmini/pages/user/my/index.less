@@ -1,1 +1,132 @@
 /* pages/user/my/index.wxss */
+page {
+  background-color: white;
+}
+.container {
+  .userinfo {
+    background-color: rgb(249, 249, 249);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    margin-bottom: 10px;
+    .userinfo-bgimg {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      width: 40%;
+      height: 150px;
+      z-index: -1;
+    }
+    .userinfo-box {
+      display: flex;
+      flex-direction: row;
+      margin: 20px 20px 20px 40px;
+      .user-avatar {
+        width: 70px;
+        height: 70px;
+        border: #f0f0f0 solid 2px;
+        border-radius: 50%;
+      }
+      .wait-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 10px;
+        .arrow-btn {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 18px;
+          font-weight: 500;
+          padding-bottom: 10px;
+          &--img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        .wait-login-text {
+          font-size: 14px;
+          font-weight: 300;
+          color: #666666;
+          padding-top: 5px;
+        }
+      }
+    }
+
+    .perfect-tips {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 20px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      background-color: #507039;
+      padding: 0 10px;
+      height: 50px;
+      .tips-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .tips-icon {
+          width: 16px;
+          height: 12px;
+        }
+        .tips-text {
+          color: white;
+          opacity: 0.7;
+          font-size: 14px;
+          font-weight: 300;
+          padding: 0 5px;
+        }
+        .tips-text-r {
+          color: white;
+          font-weight: 400;
+          padding: 0 5px;
+          font-size: 14px;
+        }
+        .tips-arrow {
+          width: 12px;
+          height: 12px;
+        }
+
+      }
+    }
+
+  }
+
+  .order {
+    border-bottom: rgb(249, 249, 249) solid 10px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    .order-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px 10px;
+      .header-text1 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .header-text2 {
+        font-size: 13px;
+        color: #999999;
+      }
+    }
+    .order-items {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      .item {
+        width: 20%;
+      }
+    }
+
+  }
+
+  .more-box {
+    border-bottom: 0px;
+  }
+
+}

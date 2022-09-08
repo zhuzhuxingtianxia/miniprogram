@@ -1,0 +1,14 @@
+<!--pages/home/index/component/step-flow/index.wxml-->
+<view class="step-flow">
+  <lcr-top />
+  <text class="des-text">开启精准高效祛痘治疗之旅</text>
+  <view class="step-cells">
+  <!-- style="{{index == 0 ? 'border-bottom: 1rpx solid #999;border-right: 1rpx solid #999;': index == 1 ? 'border-bottom: 1rpx solid #999;' : index == 2 ? 'border-right: 1rpx solid #999;' : ''}} " -->
+    <view wx:for="{{datas}}" wx:for-item="item" wx:key="index" class="view view-{{index}}">
+      <image class="bgimg" mode="aspectFit" src="{{item.bgImg}}"/>
+      <image class="img-icon" src="{{item.img}}"/>
+      <text class="text">{{item.name}}</text>
+      <text class="sub-text" wx:for-items="{{item.introduce}}" wx:for-item="subitem" wx:key="index">{{subitem}}</text>
+    </view>
+  </view>
+</view>

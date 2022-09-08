@@ -1,22 +1,29 @@
 // app.ts
+const registerNav = () => {
+  wx.pushTo = (option = {url: '', login: false}) => {
+      if (option.login) {
+        option.url = '/pages/login/index'
+      }
+      return wx.navigateTo(option)
+  }
+
+}
+
 App({
   globalData: {
     userInfo: undefined,
-    navObjct:{}
+    navObjct:{
+      statusBarHeight:0,
+      navBarHeight: 44
+    }
   },
   onLaunch() {
+    registerNav()
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        console.log(res.code)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      },
-    })
     try {
       const info = wx.getSystemInfoSync()
       const objc = {

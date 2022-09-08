@@ -1,11 +1,13 @@
 {
   "pages": [
-    "pages/home/home",
+    "pages/home/index/home",
     "pages/report/index",
     "pages/plan/index",
     "pages/user/my/index",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/login/index",
+    "pages/home/ai-face/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,7 +24,7 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/home/index/home",
         "text": "首页",
         "iconPath": "/sources/tabbar/1.png",
         "selectedIconPath": "/sources/tabbar/1-on.png"
@@ -42,8 +44,8 @@
       {
         "pagePath": "pages/user/my/index",
         "text": "我的",
-        "iconPath": "/sources/tabbar/3.png",
-        "selectedIconPath": "/sources/tabbar/3-on.png"
+        "iconPath": "/sources/tabbar/4.png",
+        "selectedIconPath": "/sources/tabbar/4-on.png"
       }
     ]
   },
@@ -52,5 +54,4 @@
       "desc": "你的位置信息将用于获取周边信息"
     }
   }
-
 }

@@ -2,6 +2,7 @@
   "navigationBarTitleText": "我的",
   "navigationStyle": "custom",
   "usingComponents": {
-    "opacity-nav": "/components/opacity-nav/index"
+    "opacity-nav": "/components/opacity-nav/index",
+    "bage-item": "/components/bage-item/index"
   }
 }

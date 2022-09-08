@@ -47,17 +47,25 @@ const swipers = [
     text: '无线晴耳机',
   },
   {
-    img: 'https://cdn-we-retail.ym.tencent.com/tsr/home/v2/banner4.png',
+    url: 'https://cdn-we-retail.ym.tencent.com/tsr/home/v2/banner4.png',
     text: '保湿护肤套装',
   },
   {
-    img: 'https://cdn-we-retail.ym.tencent.com/tsr/home/v2/banner5.png',
+    url: 'https://cdn-we-retail.ym.tencent.com/tsr/home/v2/banner5.png',
     text: '萌物来袭',
   }
+]
+
+// 弹框二维码数据
+const QRData = [
+  {title: '添加客服企业微信', url: '添加客服企业微信'},
+  {title: '关注贝芙汀官方公众号', url: 'https://work.weixin.qq.com/u/vc04f06b3135fedecd?v=4.0.8.19637'},
+  {title: '添加您的护肤专属顾问', url: '添加您的护肤专属顾问'}
 ]
 
 export {
   swipers,
   swiperList,
-  stepList
+  stepList,
+  QRData
 }

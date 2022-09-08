@@ -1,13 +1,11 @@
 <!--pages/report/index.wxml-->
 <page-meta>
-<navigation-bar
+  <navigation-bar
     title="检测报告"
     front-color="#000"
     background-color="#FFF"
   />
-  <view style="background-color: tomato; height: 300px;"></view>
-  <view style="background-color: rgb(71, 255, 200); height: 300px;"></view>
-  <view style="background-color: rgb(71, 157, 255); height: 300px;"></view>
-  <view style="background-color: rgb(255, 71, 230); height: 300px;"></view>
-  <view style="background-color: rgb(255, 71, 95); height: 300px;"></view>
+  <view class="report-page">
+    <emty-view bind:button="onCheckFace"></emty-view>
+  </view>
  </page-meta>

@@ -2,21 +2,24 @@
 <view class="opacity-nav-container">
   <view class="opacity-nav">
     <view class="status-bar" style="{{statusBarStyle}}"/>
-    <view class="nav-bar" style="{{navBarStyle}}">
-      <block wx:if="{{title != undefined && title.length > 0}}">
-        {{title}}
-      </block>
-      <slot wx:else></slot>
-      <view class="left-icons">
-        <image 
-            wx:if="{{back == true}}"
-            bindtap="backClick"  
-            class="back-image" mode="widthFix"
-            src="/sources/home/arrow-left-black.png"
-        />
+    <view class="nav-bar" style="height: {{navBarHeight}}px;">
+      <view class="nav-bar-bg" style="{{navBarStyle}}"></view>
+      <view class="nav-bar-box" style="opacity: {{titleViewOpacity ? opacity : '1.0'}};">
+        <block wx:if="{{title != undefined && title.length > 0}}">
+          {{title}}
+        </block>
+        <slot wx:else></slot>
+        <view class="left-icons">
+          <image 
+              wx:if="{{ pages > 1 }}"
+              bindtap="backClick"  
+              class="back-image" mode="widthFix"
+              src="{{ backImg ? backImg : '/sources/home/arrow-left-black.png' }}"
+          />
+        </view>
       </view>
     </view>
-    <view class="icon-view" style="height: {{navBarHeight}}px;">
+    <view wx:if="{{pages <= 1}}" class="icon-view" style="height: {{navBarHeight}}px;">
       <slot name="icon"></slot>
     </view>
   </view>

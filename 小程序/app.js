@@ -1,4 +1,11 @@
 //app.js
+wx.pushTo = (option = {url: '', login: false}) => {
+  if (option.login) {
+    option.url = '/pages/login/login'
+  }
+  return wx.navigateTo(option)
+}
+
 App({
   onLaunch: function () {
     // 展示本地存储能力

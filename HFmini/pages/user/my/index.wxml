@@ -2,4 +2,65 @@
 <opacity-nav back="false">
   <image slot="icon" src="/sources/home/logo.png" style="height: 50rpx;width: 250rpx;"/>
 </opacity-nav>
-<view class="container"></view>
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="userinfo">
+    <image class="userinfo-bgimg" mode="widthFix"></image>
+    <view class="userinfo-box">
+      <image class="user-avatar" src="/sources/my/no-login.png"/>
+      <!-- <text class="user-nickname"></text> -->
+      <view class="wait-login">
+        <view class="arrow-btn" bindtap="goLogin">
+          立即登陆 
+          <image class="arrow-btn--img" src="/sources/my/arrowright-black.png"/>
+        </view>
+        <text class="wait-login-text">欢迎使用贝芙汀，登陆体验更多</text>
+      </view>
+    </view>
+    <view class="perfect-tips">
+      <view class="tips-item">
+        <image class="tips-icon" src="/sources/my/icon.png"/>
+        <text class="tips-text">您当前病情信息尚未完善</text>
+      </view>
+      <view class="tips-item" bindtap="onFullInfo">
+        <text class="tips-text-r">去完善</text>
+        <image class="tips-arrow" src="/sources/my/arrowright-white.png"/>
+      </view>
+    </view>
+  </view>
+  <!-- 问诊订单 -->
+  <view class="order">
+    <view class="order-header">
+      <text class="header-text1">问诊订单</text>
+      <text class="header-text2" data-index="{{0}}" bindtap="onVisitOrder">查看全部</text>
+    </view>
+    <view class="order-items">
+      <block wx:for="{{visitOrder}}" data-item="item" wx:key="index">
+        <bage-item class="item" icon="/sources/my/{{item.icon}}.png" text="{{item.title}}" data-index="{{index + 1}}" bindtap="onVisitOrder"/>
+      </block>
+    </view>
+  </view>
+  <!-- 商品订单 -->
+  <view class="order">
+    <view class="order-header">
+      <text class="header-text1">商品订单</text>
+      <text class="header-text2" data-index="{{0}}" bindtap="onShopOrder">查看全部</text>
+    </view>
+    <view class="order-items">
+      <block wx:for="{{shopOrder}}" data-item="item" wx:key="index">
+        <bage-item class="item" icon="/sources/my/{{item.icon}}.png" text="{{item.title}}" data-index="{{index + 1}}" bindtap="onShopOrder"/>
+      </block>
+    </view>
+  </view>
+  <!-- 更多功能 -->
+  <view class="order more-box">
+    <view class="order-header">
+      <text class="header-text1">更多功能</text>
+    </view>
+    <view class="order-items">
+      <block wx:for="{{moreItems}}" data-item="item" wx:key="index">
+        <bage-item class="item" icon="/sources/my/{{item.icon}}.png" text="{{item.title}}" data-index="{{index + 1}}" bindtap="onMoreFunction"/>
+      </block>
+    </view>
+  </view>
+</view>

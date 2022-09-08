@@ -1,0 +1,18 @@
+<!--pages/login/index.js.wxml-->
+<opacity-nav title="登陆"></opacity-nav>
+<view class="login-page" style="margin-top: {{navObjct.statusBarHeight + navObjct.navBarHeight}}px;">
+  <image src="/sources/home/logo.png" style="margin-top: {{navObjct.statusBarHeight}}px;" class="login-bg-img"/>
+  <image src="/sources/home/logo.png" mode="widthFix" class="login-logo"></image>
+  <text class="dec-text">{{"欢迎登陆贝芙汀官方小程序\n和我们一起开启健康肌肤之旅"}}</text>
+  <view class="login-btn" bindtap="onLogin">{{"微信快捷登录"}}</view>
+    <view class="login-prtcol">
+      <view class="bubble-box" hidden="{{showbubble}}">
+        <image class="bubble-img" src="/sources/home/bubble.png"/>
+        <text class="bubble-text">请阅读并勾选协议</text>
+      </view>
+      <label class="radio-label" bindtap="onAgreement">
+        <image class="radio-img" src="{{ check ? '/sources/home/sel-on.png' : '/sources/home/sel.png' }}"/> 我已阅读并同意
+      </label>
+      <view bindtap="onAgreementList">{{"《用户服务协议、隐私权协议》"}}</view>
+    </view>
+</view>

@@ -1,9 +1,6 @@
 // pages/plan/index.ts
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
@@ -13,7 +10,7 @@ Page({
    */
   onLoad() {
     wx.setNavigationBarTitle({'title': '治疗方案'})
-    wx.setNavigationBarColor({'backgroundColor':'#cc00ff','frontColor':'#ffffff'})
+    wx.setNavigationBarColor({'backgroundColor':'#fff','frontColor':'#333'})
   },
 
   /**
@@ -57,11 +54,11 @@ Page({
   onReachBottom() {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  /*
+    自定义事件
+  */
+  onCheckFace() {
+    wx.navigateTo({url: '../home/ai-face/index', login: true})
   }
+  
 })

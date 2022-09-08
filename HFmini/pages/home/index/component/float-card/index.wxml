@@ -1,0 +1,9 @@
+<!--pages/home/index/component/float-card/index.wxml-->
+<view class="float-card">
+  <view class="float-card--box">
+    <view class="float-card-item" wx:for="{{['医生就诊','联系客服']}}" wx:key="index" data-index="{{index}}" bindtap="onTap">
+      <image src="/sources/home/pd-{{index+1}}.png" style="width: 20px;" mode="widthFix"></image>
+      <text class="text">{{item}}</text>
+    </view>
+  </view>
+</view>

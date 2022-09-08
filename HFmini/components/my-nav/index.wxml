@@ -8,7 +8,7 @@
       <image wx:if="{{back == true}}" 
             bindtap="backClick" 
             class="back-image" mode="widthFix" 
-            src="{{backImg ?? '/sources/home/arrow-left-black.png'}}"/>
+            src="{{backImg ? backImg : '/sources/home/arrow-left-black.png'}}"/>
       <image wx:if="{{home == true}}" 
             bindtap="homeClick"
             class="home-image" mode="widthFix" 

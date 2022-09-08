@@ -1,0 +1,17 @@
+<!--pages/home/index/component/ai-text/index.wxml-->
+<view class="ai-text">
+  <image class="bgimg"/>
+  <lcr-top mode="2" class="lcr"/>
+  <text class="text-1">肌肤痘痘问题全面“捕获”</text>
+  <image class="header-img" src="https://cdn-we-retail.ym.tencent.com/tsr/home/v2/banner3.png"/>
+  <image class="number-img" src="/sources/home/1.png"/>
+  <view class="text-2">
+    <text>检测结果经过全国9个省份14家</text>
+    <text>三甲医院临床研究验证</text>
+  </view>
+  <image class="number-img" src="/sources/home/2.png"/>
+  <view class="text-2">
+    <text>AI模型基于超过百万张皮肤</text>
+    <text>图像研发得出</text>
+  </view>
+</view>

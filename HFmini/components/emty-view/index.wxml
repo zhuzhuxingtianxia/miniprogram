@@ -1,0 +1,8 @@
+<!--components/emty-view/index.wxml-->
+<view class="emty-view" style="{{style}}">
+  <image class="emty-img" mode="widthFix" src="{{img}}"/>
+  <text wx:if="{{title != undefined && title.length > 0}}" class="emty-title">{{title}}</text>
+  <text wx:if="{{subtitle != undefined && subtitle.length > 0}}" class="emty-subtitle">{{subtitle}}</text>
+  <text wx:if="{{btnText != undefined && btnText.length > 0}}" class="emty-btn" bindtap="onTap">{{btnText}}</text>
+  <slot></slot>
+</view>

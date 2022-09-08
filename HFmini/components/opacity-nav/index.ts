@@ -1,7 +1,4 @@
 // components/opacity-nav/index.ts
-
-const {statusBarHeight, navBarHeight} = getApp().globalData.navObjct
-
 Component({
   options: {
     // 在组件定义时的选项中启用多 slot 支持
@@ -19,6 +16,10 @@ Component({
       type: String,
       value: "true"
     },
+    backImg: {
+      // 返回按钮图片路径，用于替换组件默认的返回按钮
+      type: String 
+    },
     navBarColor: {
       type: String,
       value: '#ffffff'
@@ -26,6 +27,11 @@ Component({
     opacity: {
       type: Number,
       value: 0.0
+    },
+    titleViewOpacity: {
+      // 导航中间组件是否跟随透明度
+      type: Boolean,
+      value: false
     }
     
   },
@@ -40,7 +46,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    navBarHeight: navBarHeight,
+    navBarHeight: getApp().globalData.navObjct.navBarHeight,
+    pages: 0,
     navBarStyle: '',
     statusBarStyle: ''
   },
@@ -48,6 +55,10 @@ Component({
     attached() {
       // 在组件实例进入页面节点树时执行
       this.changeOpacity(this.properties.opacity)
+      this.setData({
+        pages: getCurrentPages().length
+      })
+      
     },
 
     detached() {
@@ -65,8 +76,9 @@ Component({
     },
 
     changeOpacity(value: Number) {
+      const statusBarHeight = getApp().globalData.navObjct.navBarHeight
       const statusBarStyle = `height: ${statusBarHeight}px; opacity: ${value}; background-color: ${this.properties.navBarColor}` 
-      const navBarStyle = `height: ${navBarHeight}px; opacity: ${value}; background-color: ${this.properties.navBarColor}` 
+      const navBarStyle = `opacity: ${value}; background-color: ${this.properties.navBarColor}` 
       this.setData({ statusBarStyle, navBarStyle })
     },
 

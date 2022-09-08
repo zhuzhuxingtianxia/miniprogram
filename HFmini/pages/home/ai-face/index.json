@@ -1,6 +1,4 @@
 {
-  "disableScroll": false,
-  "navigationBarTitleText": "",
   "navigationStyle": "custom",
   "usingComponents": {
     "opacity-nav": "/components/opacity-nav/index"

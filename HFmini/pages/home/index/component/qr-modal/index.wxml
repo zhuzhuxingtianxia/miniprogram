@@ -1,0 +1,21 @@
+<!--pages/home/index/component/qr-modal/index.wxml-->
+<modal show="{{show}}" bindclose="closeClick">
+    <!-- <canvas type="2d" id="myQrcode" style="display: none;"></canvas> -->
+    <view class="modal-view">
+      <image class="bg-img"/>
+      <view class="close-range" bindtap="closeClick">
+        <image class="close-img" src="/sources/home/close.png" mode="widthFix" />
+      </view>
+      <text class="title">{{"长安识别二维码"}}</text>
+      <text class="desc">{{qrData.title}}</text>
+      <view class="qr-box">
+        <image class="qr-img" src="{{qrimg}}" show-menu-by-longpress/>
+        <view class="logo-box" wx:if="{{modalType == 1}}">
+          <view class="logo-box--in">
+            <image class="logo-img" mode="aspectFit" src="/sources/home/logo.png" show-menu-by-longpress/>
+            <text class="logo-text">贝芙汀</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </modal>

@@ -1,0 +1,14 @@
+<!--pages/home/index/component/lcr-top/index.wxml-->
+
+<view class="lcr-top" style="color:{{mode == 1 ? '#fff':'rgb(130,140,120)'}};">
+  <view class="left">{{data.left}}</view>
+  <view class="center">
+    <image class="top-image" mode="widthFix" src="/sources/home/LE{{mode == 1 ? '1' : ''}}.png"/>
+    <view class="center-box">
+      <image class="lr-img" mode="widthFix" src="{{mode == 1 ? '/sources/home/ll.png':'/sources/home/llg.png'}}"/>
+      <text style="font-weight: {{mode == 1 ? '300' : '400'}};">{{data.center}}</text>
+      <image class="lr-img" mode="widthFix" src="{{mode == 1 ? '/sources/home/lr.png':'/sources/home/lrg.png'}}"/>
+    </view>
+  </view>
+  <view class="right">{{data.right}}</view>
+</view>

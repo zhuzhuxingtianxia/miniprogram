@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "方案",
-  "usingComponents": {}
+  "usingComponents": {
+    "emty-view": "/components/emty-view/index"
+  }
 }

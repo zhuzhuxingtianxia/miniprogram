@@ -1,0 +1,38 @@
+<!--pages/home/index/component/cart-bottom/index.wxml-->
+<view class="cart-bottom">
+  <image class="bgimg" src="https://cdn-we-retail.ym.tencent.com/tsr/home/v2/banner4.png"/>
+  <view class="cart">
+    <lcr-top mode="3"/>
+    <text class="card-title">你也不是一个人在战逗</text>
+    <view class="desc-view">
+      <label class="label">1.</label>
+      <text class="text">{{"贝芙汀是薇诺娜母公司贝泰妮集团旗下，\n主打祛痘的皮肤健康品牌；"}}</text>
+    </view>
+    <view class="desc-view">
+      <label class="label">2.</label>
+      <text class="text">{{"贝芙汀是薇诺娜母公司贝泰妮集团旗下，\n主打祛痘的皮肤健康品牌；"}}</text>
+    </view>
+    <view class="s-cart-box">
+      <view class="s-cart-box__item">
+        <image class="image" src="/sources/home/gzh.png"/>
+        <text class="text-title">贝芙汀官方公众号</text>
+        <text class="text-des">{{"专业战逗知识福利\n开启治愈之旅"}}</text>
+        <text class="button" bindtap="onButtonClick">立即关注</text>
+      </view>
+      <view class="s-cart-box__item">
+        <image class="image" src="/sources/home/gw.png"/>
+        <text class="text-title">1V1专属陪伴顾问</text>
+        <text class="text-des">{{"扫码添加"}}</text>
+        <image class="myQrcode" src="{{myQrcode}}" bindtap="onImgClick"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <image class="bottom-image" style="height: 40px;" mode="heightFix" src="/sources/home/logo.png"/>
+    <view class="bottom-view">
+      <text class="text">{{"- 贝芙汀是主打“科学治疗痘痘”的专业品牌；"}}</text>
+      <text class="text">{{"- 前沿AI科技算法，精准评估痘痘问题；"}}</text>
+      <text class="text">{{"- 提供专业权威医学诊疗，为你提供定制化战逗方案；"}}</text>
+    </view>
+  </view>
+</view>

@@ -42,5 +42,7 @@
           class='login' hover-class="btnhover"
           bindtap="loginAction">登录</button>
   <button wx:else class='login' disabled="false">登录</button> 
+  <canvas class="myQrcode" style="width: 250rpx; height: 250rpx;margin-top: 200rpx;" canvas-id="myQrcode"></canvas>
+
 </view>
 

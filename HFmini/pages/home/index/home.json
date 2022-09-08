@@ -1,0 +1,15 @@
+{
+  "disableScroll": false,
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "opacity-nav": "/components/opacity-nav/index",
+    "lcr-top": "./component/lcr-top/index",
+    "step-flow": "./component/step-flow/index",
+    "example-swiper": "./component/example-swiper/index",
+    "ai-text": "./component/ai-text/index",
+    "card-bottom": "./component/card-bottom/index",
+    "float-card": "./component/float-card/index",
+    "qr-modal":"./component/qr-modal/index"
+  }
+}

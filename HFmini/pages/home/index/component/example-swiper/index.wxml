@@ -1,0 +1,14 @@
+<!--pages/home/index/component/example-swiper/index.wxml-->
+<!-- swiper 在子组件无法修改指示器样式  -->
+<view class="example-swiper">
+    <view class="lcr-in-box">
+      <lcr-top  mode="1"/>
+    </view>
+    <swiper class="swiper" indicator-dots autoplay circular >
+        <swiper-item class="swiper-item" wx:for="{{datas}}" wx:key="index" bindtap="onSwiperItem">
+          <view class="swiper-item-box">
+            <image src="{{item.url}}" class="swiper-item__img"/>
+          </view>
+        </swiper-item>
+    </swiper>
+  </view>

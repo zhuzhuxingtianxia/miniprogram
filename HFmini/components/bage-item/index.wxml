@@ -1,0 +1,6 @@
+<!--components/bage-item/index.wxml-->
+<view class="bage-item">
+  <image class="item-icon" mode="widthFix" src="{{icon}}"/>
+  <text class="item-text">{{text}}</text>
+  <text wx:if="{{bage > 0}}" class="item-bage">{{bage > 999 ? '99+': bage}}</text>
+</view>

@@ -1,7 +1,7 @@
 /* pages/home/home.wxss */
 page {
   height: 100%;
-  background-color: rgb(250, 247, 252);
+  background-color: rgb(249, 249, 249);
   box-sizing: border-box;
   padding-bottom: calc(env(safe-area-inset-bottom) + 10rpx);
 }
@@ -20,8 +20,11 @@ page {
 }
 
 .home-page {
-  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .swiper-container {
+    width: 100%;
     position: relative;
     .swiper {
       height: 658px;
@@ -103,5 +106,73 @@ page {
 
   }
   
+  .example-swiper {
+    width: 100%;
+    position: relative;
+    background-color: rgb(76, 103, 77);
+    padding: 40px 0;
+    &>view {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 40px;
+    }
+    .swiper {
+      height: 490px;
+      // 设置指示器到底部的距离
+      .wx-swiper-dots.wx-swiper-dots-horizontal {
+        margin-bottom: 0px;
+      }
+      .wx-swiper-dot {
+        display: inline-flex;
+        width: 20px;
+        height: 2px;
+        &::before {
+          content: "";
+          flex-grow: 1;
+          background: rgba(255, 255, 255, 0.6);
+          border-radius: 2px;
+        }
+      }
+      .wx-swiper-dot-active {
+        display: inline-flex;
+        width: 30px;
+        height: 2px;
+        &::before {
+          background: white;
+        }
+      }
+
+      .swiper-item {
+        display: flex;
+      }
+      .swiper-item-box {
+        flex: 1;
+        margin: 0 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 50px;
+        .swiper-item__img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+  }
+
+  .check-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 280px;
+    margin-bottom: 40px;
+    border-radius: 22px;
+    background-color: black;
+    color: white;
+    &:active {
+      background-color: #333;
+    }
+  }
 
 }

@@ -4177,6 +4177,7 @@ innerAudioContext.onError((res) => {
     interface NavigateToOption {
         /** 需要跳转的应用内非 tabBar 的页面的路径 (代码包路径), 路径后可以带参数。参数与路径之间使用 `?` 分隔，参数键与参数值用 `=` 相连，不同参数用 `&` 分隔；如 'path?key=value&key2=value2' */
         url: string
+        login?: boolean
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: NavigateToCompleteCallback
         /** 页面间通信接口，用于监听被打开页面发送到当前页面的数据。基础库 2.7.3 开始支持。 */
@@ -17004,6 +17005,7 @@ worker.postMessage({
          * | fail sdcard not mounted | android sdcard 挂载失败 | */ errCode: number
     }
     interface Wx {
+        pushTo: (option?: { url: string; login?: boolean }) => Promise<NavigateToSuccessCallbackResult>
         /** [ArrayBuffer wx.base64ToArrayBuffer(string base64)](https://developers.weixin.qq.com/miniprogram/dev/api/base/wx.base64ToArrayBuffer.html)
          *
          * 需要基础库： `1.1.0`

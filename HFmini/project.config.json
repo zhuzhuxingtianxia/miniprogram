@@ -40,5 +40,6 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wxa2fd53cc1b7c76b8"
+  "appid": "wxa2fd53cc1b7c76b8",
+  "appsecret": "291177f7e76fabb503060b3222e63f9a"
 }

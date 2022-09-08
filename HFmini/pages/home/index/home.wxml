@@ -1,0 +1,45 @@
+<!--pages/home/home.wxml-->
+<opacity-nav back="false" title-view-opacity="true" 
+              opacity="{{headerOpacity}}">
+  <text class="nav-header-text" 
+        bindtap="onCheckClick">皮肤检测</text>
+  <image slot="icon" src="/sources/home/logo.png" style="width: 250rpx;" mode="widthFix"/>
+</opacity-nav>
+<view class="home-page">
+  <view class="swiper-container">
+    <swiper class="swiper" indicator-dots autoplay circular >
+        <swiper-item wx:for="{{swipers}}" data-item="{{item}}" wx:key="index" bindtap="onSwiperItem">
+          <view class="swiper-item">
+            <image src="{{item.url}}" class="swiper-item__img"/>
+          </view>
+        </swiper-item>
+    </swiper>
+    <view class="swiper-bottom">
+      <text class="button" bindtap="onCheckClick">开始检测</text>
+      <view class="know-more" bindtap="scrollNextPage">
+        <image src="/sources/home/arrow-up.png"/>
+        <span>了解更多</span>
+      </view>
+    </view>
+  </view>
+  <step-flow datas="{{stepList}}"/>
+  <view class="example-swiper">
+    <view>
+      <lcr-top  mode="1"/>
+    </view>
+    <swiper class="swiper" indicator-dots autoplay circular >
+        <swiper-item class="swiper-item" wx:for="{{examples}}" wx:key="index" bindtap="onSwiperItem">
+          <view class="swiper-item-box">
+            <image src="{{item.url}}" class="swiper-item__img"/>
+          </view>
+        </swiper-item>
+    </swiper>
+  </view>
+  <ai-text />
+  <card-bottom bindclick="onCareClick"/>
+  <view class="check-button" bindtap="onCheckClick">
+    <text>{{"皮肤检测"}}</text>
+  </view>
+  <float-card bind:click="floatClick"/>
+  <qr-modal show="{{showModal}}" modalType="{{modalType}}" bind:close="closeModal"/>
+</view>

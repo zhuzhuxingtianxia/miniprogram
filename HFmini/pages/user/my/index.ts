@@ -1,11 +1,14 @@
 // pages/user/my/index.ts
+const {visitOrder, shopOrder, moreItems } = require('./data')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    visitOrder,
+    shopOrder,
+    moreItems
   },
 
   /**
@@ -50,17 +53,27 @@ Page({
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  /*
+    自定义事件
+  */
+  goLogin() {
+    wx.navigateTo({url: '/pages/login/index'})
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  //完善信息
+  onFullInfo() {
+    wx.pushTo({url: '/pages/login/index', login: true})
+  },
+  //问诊订单
+  onVisitOrder(e: any) {
+    console.log(e.currentTarget.dataset)
+  },
+  //商品订单
+  onShopOrder(e: any) {
+    console.log(e.currentTarget.dataset)
+  },
+  // 更多
+  onMoreFunction(e: any) {
+    console.log(e.currentTarget.dataset)
   }
+
 })

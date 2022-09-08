@@ -1,4 +1,5 @@
 // pages/login/login.js
+import qrcode from '../../utils/qrcode'
 Page({
 
   /**
@@ -119,7 +120,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setQrcode()
   },
 
   /**
@@ -165,5 +166,13 @@ Page({
     } else {
       return true;
     }
+  },
+  setQrcode: function (){
+    qrcode({
+      width: 125,
+      height: 125,
+      canvasId: 'myQrcode',
+      text: '需要转化的链接',
+    })
   },
 })
