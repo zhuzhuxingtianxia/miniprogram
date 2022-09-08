@@ -70,6 +70,18 @@ Page({
       headerOpacity: opacity
     })
   },
+  //了解更多
+  scrollNextPage(){
+    console.log('scrollNextPage')
+    wx.createSelectorQuery().select('.swiper-container').boundingClientRect(res => {
+      console.log(res)
+      wx.pageScrollTo({
+        scrollTop: res.height - 88,
+        duration: 300
+      })
+      
+    }).exec()
+  },
   onSwiperItem(e: any) {
     const item = e.currentTarget.dataset.item
     wx.showToast({title: item.text, icon: 'none'})

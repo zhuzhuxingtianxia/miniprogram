@@ -17,7 +17,7 @@
     <view class="swiper-bottom">
       <text class="button" bindtap="onCheckClick">开始检测</text>
       <view class="know-more" bindtap="scrollNextPage">
-        <image src="/sources/home/arrow-up.png"/>
+        <image class="shake-image" src="/sources/home/arrow-up.png"/>
         <span>了解更多</span>
       </view>
     </view>
