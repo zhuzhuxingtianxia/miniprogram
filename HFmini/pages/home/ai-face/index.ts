@@ -6,7 +6,7 @@ Router({
    * 页面的初始数据
    */
   data: {
-
+    check: false
   },
 
   /**
@@ -15,53 +15,29 @@ Router({
   onLoad() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  /*
+    自定义事件
+  */
+  onMakePhoto() {
+    if (!this.data.check) {
+      wx.showToast({title:"请先阅读协议", icon:'error'})
+      return
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  onAgreement() {
+    this.setData({
+      check: !this.data.check
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onAgreementList() {
+    wx.showToast({title:"查看协议"})
   }
+  
+  
 }, true)

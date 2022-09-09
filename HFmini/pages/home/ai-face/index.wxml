@@ -3,12 +3,29 @@
   <text style="color: white;">AI痘痘检测</text>
 </opacity-nav>
 <view class="ai-face">
-  <view style="background-color: tomato; height: 300px;"></view>
-  <text>pages/home/ai-face/index.wxml</text>
-  <view style="background-color: rgb(71, 255, 200); height: 300px;"></view>
-  <view style="background-color: rgb(111, 71, 255); flex: 1;"></view>
-  <view style="background-color: rgb(71, 157, 255); height: 300px;"></view>
-  <view style="background-color: rgb(255, 71, 230); height: 300px;"></view>
-  <view style="background-color: rgb(255, 71, 95); height: 300px;"></view>
+  <image class="ai-bgimg" src="https://cdn-we-retail.ym.tencent.com/tsr/home/v2/banner3.png"/>
+  <view class="content-bottom">
+    <view class="bottom-card">
+      <text class="card-title">{{"为了保证评估准确性，开启拍照前请做好准备"}}</text>
+      <view class="line-box">
+        <view class="line"></view>
+        <image class="arrow-up" src="/sources/evaluating/arrowup.png"/>
+      </view>
+      <image class="step-img" mode="widthFix" src="/sources/evaluating/step1.png"/>
+      <text class="step-text">{{"卸妆洁面，面部不带妆容\n在柔和光线下拍照"}}</text>
+      <view style="height: 20px;"></view>
+      <image class="step-img" mode="widthFix" src="/sources/evaluating/step2.png"/>
+      <text class="step-text">{{"拍摄三张照片即可获得精准报告"}}</text>
+    </view>
+    <view class="btn-box">
+      <view class="prtcol-box">
+        <label class="radio-label" bindtap="onAgreement">
+          <image class="radio-img" src="{{ check ? '/sources/home/sel-on.png' : '/sources/home/sel.png' }}"/> 我已阅读并同意
+        </label>
+        <view bindtap="onAgreementList">{{"《用户服务协议、隐私权协议》"}}</view>
+      </view>
+      <view class="make-btn" bindtap="onMakePhoto">{{"开始拍照"}}</view>
+    </view>
+  </view>
   
 </view>
