@@ -1,0 +1,9 @@
+<!--pages/user/order-list/index.wxml-->
+<view class="order-list">
+  <emty-view img="/sources/default/1.png"
+            title="{{emtyText}}"
+            subtitle=""
+            btnText="">
+  </emty-view>
+</view>
+

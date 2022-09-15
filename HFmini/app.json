@@ -9,7 +9,8 @@
     "pages/login/index",
     "pages/home/ai-face/index",
     "pages/home/up-face/index",
-    "pages/home/ai-camera/index"
+    "pages/home/ai-camera/index",
+    "pages/user/order-list/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

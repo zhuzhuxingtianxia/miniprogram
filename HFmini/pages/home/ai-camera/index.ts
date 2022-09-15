@@ -156,7 +156,7 @@ Page({
     this.setData({src:''})
   },
   // 确认照片
-  async onConfirm() {
+  onConfirm() {
     const fs = wx.getFileSystemManager()
     fs.readFile({
       filePath: this.data.src,

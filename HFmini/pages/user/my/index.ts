@@ -8,7 +8,8 @@ Page({
   data: {
     visitOrder,
     shopOrder,
-    moreItems
+    moreItems,
+    userInfo: undefined
   },
 
   /**
@@ -29,7 +30,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    const userInfo = getApp().globalData.userInfo
+    if (userInfo) {
+      this.setData({userInfo})
+    }
   },
 
   /**
@@ -69,7 +73,9 @@ Page({
   },
   //商品订单
   onShopOrder(e: any) {
-    console.log(e.currentTarget.dataset)
+    const type = e.currentTarget.dataset
+    console.log(type)
+    wx.pushTo({url: `../order-list/index?type=${type.index}`, login: true})
   },
   // 更多
   onMoreFunction(e: any) {

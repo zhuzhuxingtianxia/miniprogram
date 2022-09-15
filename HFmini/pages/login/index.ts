@@ -83,21 +83,7 @@ Page({
       wx.vibrateLong()
       return
     }
-    // 登录
-    wx.login({
-      success: res => {
-        console.log(res)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        const secret = "291177f7e76fabb503060b3222e63f9a"
-        const code2Session = `https://api.weixin.qq.com/sns/jscode2session?appid=wxa2fd53cc1b7c76b8&secret=${secret}&js_code=${res.code}&grant_type=authorization_code`
-        wx.request({
-          url: code2Session,
-          success (res) {
-            console.log(res.data)
-          }
-        })
-      },
-    })
+    
     if (wx.canIUse('button.open-type.getUserInfo')) {
       getApp().userInfoReadyCallback = (res: any) => {
         console.log('button.open-type.getUserInfo')
@@ -109,6 +95,8 @@ Page({
       success: (res) => {
         console.log('getUserProfile')
         console.log(res)
+        getApp().globalData.userInfo = res.userInfo
+        wx.navigateBack({delta:1})
       }
     })
     wx.getSetting({
@@ -127,7 +115,25 @@ Page({
     })
 
   },
-  //获取手机号
+   // 获取openId 需后端配合
+   getOpenId(){
+      // 登录
+      wx.login({
+        success: res => {
+          console.log(res)
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          const secret = "291177f7e76fabb503060b3222e63f9a"
+          const code2Session = `https://api.weixin.qq.com/sns/jscode2session?appid=wxa2fd53cc1b7c76b8&secret=${secret}&js_code=${res.code}&grant_type=authorization_code`
+          wx.request({
+            url: code2Session,
+            success (res) {
+              console.log(res.data)
+            }
+          })
+        },
+      })
+   },
+  //获取手机号,需配置主体
   getPhoneNumber(e: any) {
     console.log(e.detail)
   },

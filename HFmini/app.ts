@@ -1,7 +1,7 @@
 // app.ts
 const registerNav = () => {
   wx.pushTo = (option = {url: '', login: false}) => {
-      if (option.login) {
+      if (option.login && getApp().globalData.userInfo == undefined) {
         option.url = '/pages/login/index'
       }
       return wx.navigateTo(option)
