@@ -18,7 +18,8 @@ Component({
     },
     backImg: {
       // 返回按钮图片路径，用于替换组件默认的返回按钮
-      type: String 
+      type: String,
+      value: "/sources/home/arrow-left-black.png"
     },
     navBarColor: {
       type: String,

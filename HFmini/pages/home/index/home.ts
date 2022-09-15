@@ -88,7 +88,7 @@ Page({
   },
   onCheckClick() {
     console.log('去测肤')
-    wx.pushTo({url: '../ai-face/index', login: true})
+    wx.pushTo({url: '../ai-face/index', login: false})
   },
   floatClick(e: any){
     const index = e.detail

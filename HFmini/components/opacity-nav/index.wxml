@@ -14,7 +14,7 @@
               wx:if="{{ pages > 1 }}"
               bindtap="backClick"  
               class="back-image" mode="widthFix"
-              src="{{ backImg ? backImg : '/sources/home/arrow-left-black.png' }}"
+              src="{{ backImg }}"
           />
         </view>
       </view>

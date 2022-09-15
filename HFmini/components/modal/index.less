@@ -10,8 +10,20 @@
   opacity: 0.5;
   overflow: hidden;
 }
+.mask_layer_close {
+  animation-duration: 0.3s;
+  animation-name: mask;
+}
+@keyframes mask{
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
-.modal_box {
+.modal_center_box {
   max-height: 80%;
   min-width: 70%;
   overflow-y: auto;
@@ -25,7 +37,7 @@
   // background: coral;
   // height: 20%;
 }
-.center_animation {
+.center_open {
   position: relative;
   width: 100%;
   height: 100%;
@@ -33,9 +45,30 @@
   animation-duration: 0.3s;
   animation-name: slidein;
 }
-.bottom_animation {
+.center_close {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fafafa;
+  animation-duration: 0.3s;
+  animation-name: slideout;
+}
+
+.modal_bottom_box {
+  max-height: 80%;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bottom_open {
   animation-duration: 0.3s;
   animation-name: slidebottom;
+}
+.bottom_close {
+  animation-duration: 0.3s;
+  animation-name: slidebottom_close;
 }
 
 .title {
@@ -109,14 +142,30 @@
   to {
     transform: scale(1.0);
   }
-
+}
+@keyframes slideout {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(0);
+  }
 }
 
 @keyframes slidebottom {
   from {
     transform: translateY(100%);
   }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slidebottom_close {
   from {
     transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
   }
 }

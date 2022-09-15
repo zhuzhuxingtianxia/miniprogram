@@ -6,9 +6,24 @@ Component({
   properties: {
     show: {
       type: Boolean,
+      observer: function(newVal, oldVal){
+        if (newVal == oldVal) { return }
+        if (newVal) {
+          this.setData({_show: newVal})
+        }else {
+          const that = this
+          setTimeout(function(){
+            that.setData({_show: newVal})
+          },300)
+        }
+        
+      }
     },
     showCloseBtn:{
       type:Boolean
+    },
+    mode: {
+      type: String,// center;bottom
     }
   },
 
@@ -16,7 +31,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    
+    _show: false
   },
 
   /**

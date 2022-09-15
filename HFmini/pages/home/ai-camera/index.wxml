@@ -1,0 +1,36 @@
+<!--pages/home/ai-camera/index.wxml-->
+<opacity-nav backImg="/sources/home/arrow-left-white.png">
+  <text style="color: white;">{{src.length > 0 ? '照片确认': facepos=='1' ? '拍左脸': facepos=='2' ? '拍右脸' : '拍正脸'}}</text>
+</opacity-nav>
+<view class="ai-camera">
+  <view class="header-box">
+    <image bindtap="onShowFlashs" hidden="{{showFlashs}}" class="flash-icon" src="/sources/evaluating/{{flash.icon}}"/>
+    <view class="header-left {{showFlashs ? 'fold_animation':'unfold_animation'}}">
+      <view wx:for="{{flashs}}" wx:key="index" data-item="{{item}}" bindtap="onChangeFlash">
+        <image class="flash-icon-item" src="/sources/evaluating/{{item.icon}}"/> 
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+    <text class="header-right" hidden="{{showFlashs}}" bindtap="openAlbum">{{"从相册上传"}}</text>
+  </view>
+  <view class="camera-box">
+    <camera wx:if="{{src.length == 0}}" resolution="high" class="camera-device" device-position="{{cameraPosition ? 'front' : 'back'}}" flash="{{flash.code}}" binderror="onError">
+      <image style="width: 100%;" mode="widthFix" src="/sources/evaluating/{{limitImg}}"/>
+    </camera>
+    <image wx:else="" class="camera-device" src="{{src}}"/>
+  </view>
+  <image mode="widthFix" class="preview-img" src="{{src}}"></image>
+  <view class="bottom-btns">
+    <block wx:if="{{src.length == 0}}">
+      <text class="cancel-btn" bindtap="closePage">取消</text>
+      <view class="takePhoto" bindtap="takePhoto" >
+        <view></view>
+      </view>
+      <image style="width: 30px;padding: 20px;" mode="widthFix" src="/sources/evaluating/device-position.png" bindtap="changeCamera"></image>
+    </block>
+    <block wx:else="">
+      <image style="width: 64px;margin-right: 25px;" mode="widthFix" src="/sources/evaluating/back.png" bindtap="resetTakePhoto"></image>
+      <image style="width: 64px;margin-left: 25px;" mode="widthFix" src="/sources/evaluating/continue.png" bindtap="onConfirm"></image>
+    </block>
+  </view>
+</view>

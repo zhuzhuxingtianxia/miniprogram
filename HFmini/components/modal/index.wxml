@@ -1,20 +1,20 @@
 <!--components/modal/index.wxml-->
-<view wx:if="{{show}}">
-  <view class='mask_layer' bindtap='modal_click_Hidden' />
-  <view class='modal_box'>
-  <view class="center_animation">
-    <!-- <view class="title">title</view> -->
-    <view class='content'>
-      <!-- <text class='modalMsg'></text> -->
-      <slot></slot>
-      <!-- <textarea class='input_show1' bindinput='changeCancelReason' auto-height value='{{modalMsg}}' bindfocus='bindfocus' bindblur='bindblur' placeholder='{{modalMsg_placeholder}}'></textarea> -->
+<view wx:if="{{_show}}" style="height: 0;">
+  <view class="mask_layer {{show ? '':'mask_layer_close'}}" bindtap='modal_click_Hidden' />
+  <view class="{{mode=='bottom'? 'modal_bottom_box':'modal_center_box'}}">
+    <view class="{{mode=='bottom' ? show ? 'bottom_open': 'bottom_close': show ? 'center_open' : 'center_close'}}">
+      <!-- <view class="title">title</view> -->
+      <view class='content'>
+        <!-- <text class='modalMsg'></text> -->
+        <slot></slot>
+        <!-- <textarea class='input_show1' bindinput='changeCancelReason' auto-height value='{{modalMsg}}' bindfocus='bindfocus' bindblur='bindblur' placeholder='{{modalMsg_placeholder}}'></textarea> -->
+      </view>
+      <!-- <view class='btn1'>
+        <view bindtap='modal_click_Hidden' class='cancel'>取消</view>
+        <view bindtap='Sure' class='Sure'>确定</view>
+      </view> -->
+      <image class="closeRule" wx:if="{{showCloseBtn}}" bindtap="closeAction" data-type="help" src="https://bm-mini-program.oss-cn-hangzhou.aliyuncs.com/static/christmas/close.png"></image>
     </view>
-    <!-- <view class='btn1'>
-      <view bindtap='modal_click_Hidden' class='cancel'>取消</view>
-      <view bindtap='Sure' class='Sure'>确定</view>
-    </view> -->
-    <image class="closeRule" wx:if="{{showCloseBtn}}" bindtap="closeAction" data-type="help" src="https://bm-mini-program.oss-cn-hangzhou.aliyuncs.com/static/christmas/close.png"></image>
-  </view>
   </view>>
 </view>
 

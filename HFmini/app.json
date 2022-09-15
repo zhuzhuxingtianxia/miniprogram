@@ -7,7 +7,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/login/index",
-    "pages/home/ai-face/index"
+    "pages/home/ai-face/index",
+    "pages/home/up-face/index",
+    "pages/home/ai-camera/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -6,6 +6,65 @@
     background-color="#FFF"
   />
   <view class="report-page">
-    <emty-view bind:button="onCheckFace"></emty-view>
+    <emty-view wx:if="{{data}}" bind:button="onCheckFace"></emty-view>
+    <view class="report-wraper">
+      <view class="cards">
+        <!-- 严重程度卡片 -->
+        <view class="cards-score">
+          <image class="cards-score--bgimg" mode="widthFix" src="/sources/assess-detail/bg.png"></image>
+          <view class="level-box">
+            <view>
+              <view class="level-desc" bindtap="onLookLevel">
+                <view>痘痘严重程度</view>
+                <image style="width: 14px;height: 14px;" src="/sources/assess-detail/doubt.png"/>
+              </view>
+              <view class="level-text">{{report.lvRank}}</view>
+            </view>
+            <view class="level-state">
+              <image style="width: 18px;height: 18px; margin-right: 5px;" src="/sources/assess-detail/0.png"/>
+              <view>{{"生效中"}}</view>
+            </view>
+          </view>
+          <view class="score-box">
+            <view class="score-text">{{report.lvScore}}<view>分</view> </view>
+            <view class="slider-box">
+              <view class="progress slider-stripe">
+                <view class="slider-bar" style="width: {{report.lvScore + '%'}};"></view>
+              </view>
+              <image class="slider-line" style="height: 13px;" src="/sources/assess-detail/line.png" mode="heightFix"></image>
+            </view>
+          </view>
+          <text class="report-text">{{"检测报告可用于医生问诊，若报告超过72小时，您的皮肤情况会有改变，需重新检测后再问诊"}}</text>
+          <view class="time-line">
+            <text class="test-time">检测时间：{{report.createTime}}</text>
+            <text class="test-history" bindtap="onHistoryList">历史报告</text>
+          </view>
+        </view>
+        <!-- 分析结果 -->
+        <view class="card-report">
+          <text class="card-report--title">智能分析结果</text>
+          <scroll-view class="scroll-view" scroll-x="true" enable-flex>
+            <view class="scroll-view-item" wx:for="{{faceReports}}" wx:key="index">
+              <image class="item-img" src="{{item.face}}"></image>
+              <image class="item-img-mask" src="{{item.faceMergeImage}}"></image>
+            </view>
+          </scroll-view>
+          <view class="result-desc" wx:for="{{[1,2]}}" wx:key="*this">
+            <image style="width: 32px;" mode="widthFix" src="/sources/assess-detail/icon_{{item}}.png"/>
+            <view class="desc-box">
+              <text class="desc-box--title">{{item == 1 ? "检测结果" : "检测建议"}}</text>
+              <view class="desc-box--detail">{{item == 1 ?report.result : report.suggest}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bottom-btn">
+        <text class="bottom-btn--text">{{"立即问诊"}}</text>
+      </view>
+      <!-- 弹框 -->
+      <modal mode="bottom" show="{{showHistory}}" bindclose="onCloseHistoryList">
+        <view class="modal-history-content"></view>
+      </modal>
+    </view>
   </view>
  </page-meta>

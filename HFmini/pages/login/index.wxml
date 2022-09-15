@@ -5,6 +5,7 @@
   <image src="/sources/home/logo.png" mode="widthFix" class="login-logo"></image>
   <text class="dec-text">{{"欢迎登陆贝芙汀官方小程序\n和我们一起开启健康肌肤之旅"}}</text>
   <view class="login-btn" bindtap="onLogin">{{"微信快捷登录"}}</view>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
     <view class="login-prtcol">
       <view class="bubble-box" hidden="{{showbubble}}">
         <image class="bubble-img" src="/sources/home/bubble.png"/>

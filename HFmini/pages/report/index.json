@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "emty-view": "/components/emty-view/index"
+    "emty-view": "/components/emty-view/index",
+    "modal": "/components/modal/index"
   }
 }

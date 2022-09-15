@@ -1,0 +1,118 @@
+/* pages/home/ai-camera/index.wxss */
+page{
+  background-color: black;
+}
+.ai-camera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc(env(safe-area-inset-bottom) + 44px + 20px);
+  .camera-box {
+    .camera-device {
+      width: 100vw;
+      height: 100vw;
+    }
+  }
+  
+  .preview-img {
+    width: 20%; 
+    margin: 10px;
+    align-self: start;
+  }
+}
+.header-box {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  .flash-icon {
+    padding: 0 20px; 
+    width: 20px; 
+    height: 20px;
+  }
+  .header-left {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    view {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 20px;
+      padding-right: 10px;
+      font-size: 15px;
+    }
+    .flash-icon-item {
+      width: 20px; 
+      height: 20px;
+    }
+  }
+  .fold_animation {
+    animation: fold 0.3s;
+  }
+  .unfold_animation {
+    transform: translateX(-100%);
+    animation: unfold 0.3s;
+  }
+  @keyframes fold {
+    from {
+      transform: translateX(-90%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1.0;
+    }
+  }
+  @keyframes unfold {
+    from {
+      transform: translateX(0);
+      opacity: 1.0;
+    }
+    to {
+      transform: translateX(-90%);
+      opacity: 0;
+    }
+  }
+  
+  
+  .header-right {
+    font-size: 15px;
+    margin: 20px;
+  }
+}
+
+.bottom-btns {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom) + 20px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .cancel-btn {
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+  }
+  .takePhoto {
+    border-radius: 50%;
+    padding: 5px; 
+    border: white solid 4px;
+    margin: 0 20px;
+    &:active {
+      opacity: 0.7;
+    }
+    view {
+      width: 60px;
+      height: 60px;
+      border-radius: 40px;
+      background-color: white;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<!--pages/home/up-face/index.wxml-->
+<view class="up-face">
+  <view class="face-list">
+    <view class="face-card" wx:for="{{configs}}" wx:key="index" data-index="{{index}}" bindtap="clickAction">
+      <!-- 提示信息 -->
+      <view class="tips" style="{{item.img.length == 0 && check ? '' : 'display: none;'}}">
+        <image class="tips-icon" src="/sources/evaluating/warning.png"/>
+        <text class="tips-text">{{"您未拍摄正脸照片"}}</text>
+      </view>
+      <!-- 内容 -->
+      <view class="face-view">
+        <image class="face-sort" src="/sources/evaluating/face-{{index}}.png"/>
+        <image class="face-img" wx:if="{{item.img.length > 0 }}" src="{{ item.img }}"/>
+        <image class="face-img" wx:else="" src="/sources/evaluating/{{item.placeholder}}"/>
+      </view>
+      <view class="face-des-box">
+        <text class="face-pos">{{item.title}}</text>
+        <text class="face-text">{{item.text}}</text>
+        <view class="handle-btn">
+          <text>{{"去拍照"}}</text>
+          <image class="arrow-r" src="/sources/my/arrowright-black.png"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class="upfile-btn" bindtap="commitClick">{{"提交照片"}}</text>
+</view>

@@ -1,7 +1,7 @@
 
 const Router = (page, flag = false) => {
   if (flag) {
-    let isLogin = true
+    let isLogin = false
     let _onShow = page.onShow
     page.onShow = () => {
       if(isLogin) {

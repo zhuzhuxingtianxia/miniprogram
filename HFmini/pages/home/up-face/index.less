@@ -1,0 +1,111 @@
+/* pages/home/up-face/index.wxss */
+.up-face {
+  position: relative;
+  background-color: #f5f5f5;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .face-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    .face-card {
+      position: relative;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 0 5px 2px #f0f0f0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 20px;
+      
+      .tips {
+        position: absolute;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: rgb(240, 202, 205);
+        .tips-icon {
+          width: 14px;
+          height: 14px;
+        }
+        .tips-text {
+          font-size: 12px;
+          color: rgb(189, 0, 15);
+          font-weight: 400;
+          margin-left: 5px;
+        }
+      }
+      .face-view {
+        position: relative;
+        margin: 20px 20px 15px 20px;
+        .face-img {
+          width: 135px;
+          height: 135px;
+        }
+        .face-sort {
+          position: absolute;
+          top: -5px;
+          left: -10px;
+          width: 52rpx;
+          height: 44rpx;
+        }
+      }
+      .face-des-box {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        .face-pos {
+          margin-top: 10px;
+          color: #333;
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .face-text {
+          font-size: 14px;
+          line-height: 24px;
+          color: #666666;
+          padding: 5px 0;
+        }
+        .handle-btn {
+          margin-top: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: #000000 solid 1px;
+          height: 26px;
+          width: 80px;
+          border-radius: 13px;
+          font-size: 15px;
+          font-weight: normal;
+          .arrow-r {
+            margin-left: 5px;
+            height: 12px;
+            width: 12px;
+          }
+        }
+      }
+
+    }
+
+  }
+  .upfile-btn {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: calc(env(safe-area-inset-bottom));
+    background-color: #333333;
+    line-height: 50px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: 90%;
+  }
+}

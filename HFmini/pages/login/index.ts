@@ -127,6 +127,10 @@ Page({
     })
 
   },
+  //获取手机号
+  getPhoneNumber(e: any) {
+    console.log(e.detail)
+  },
   onAgreement() {
     this.setData({
       showbubble: true,
