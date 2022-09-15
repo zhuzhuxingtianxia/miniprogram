@@ -105,6 +105,14 @@ Page({
       showLevel: true
     })
   },
+  exitBtn() {
+    this.setData({
+      showLevel: false
+    })
+  },
+  afterLeave() {
+    console.log('afterLeave')
+  },
   //历史列表
   onHistoryList() {
     console.log('历史列表')

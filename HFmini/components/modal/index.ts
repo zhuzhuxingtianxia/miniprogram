@@ -14,7 +14,7 @@ Component({
           const that = this
           setTimeout(function(){
             that.setData({_show: newVal})
-          },300)
+          },250)
         }
         
       }

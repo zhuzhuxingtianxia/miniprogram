@@ -1,6 +1,6 @@
 <!--components/modal/index.wxml-->
 <view wx:if="{{_show}}" style="height: 0;">
-  <view class="mask_layer {{show ? '':'mask_layer_close'}}" bindtap='modal_click_Hidden' />
+  <view class="mask_layer {{show ? 'mask_layer_show':'mask_layer_close'}}" bindtap='modal_click_Hidden' />
   <view class="{{mode=='bottom'? 'modal_bottom_box':'modal_center_box'}}">
     <view class="{{mode=='bottom' ? show ? 'bottom_open': 'bottom_close': show ? 'center_open' : 'center_close'}}">
       <!-- <view class="title">title</view> -->
