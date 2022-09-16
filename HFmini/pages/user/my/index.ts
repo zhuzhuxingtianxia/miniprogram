@@ -65,11 +65,14 @@ Page({
   },
   //完善信息
   onFullInfo() {
-    wx.pushTo({url: '/pages/login/index', login: true})
+    // wx.pushTo({url: '/pages/login/index', login: true})
+    wx.showToast({title: '完善信息'})
   },
   //问诊订单
   onVisitOrder(e: any) {
-    console.log(e.currentTarget.dataset)
+    const type = e.currentTarget.dataset
+    console.log(type)
+    wx.pushTo({url: `../order-list/index?type=${type.index}`, login: true})
   },
   //商品订单
   onShopOrder(e: any) {
@@ -79,7 +82,19 @@ Page({
   },
   // 更多
   onMoreFunction(e: any) {
-    console.log(e.currentTarget.dataset)
+    const type = e.currentTarget.dataset.index | 0
+    console.log(type)
+    let msg = ''
+    if (type == 1) {
+      msg = '我的报告'
+    }else if(type == 2){
+      msg = '治疗方案'
+    }else if(type == 3){
+      msg = '我的地址'
+    }
+    
+    wx.showToast({title: msg})
+
   }
 
 })

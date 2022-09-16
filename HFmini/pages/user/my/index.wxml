@@ -8,13 +8,13 @@
     <image class="userinfo-bgimg" mode="widthFix"></image>
     <view class="userinfo-box">
       <image class="user-avatar" src="{{userInfo ? userInfo.avatarUrl:'/sources/my/no-login.png'}}"/>
-      <!-- <text class="user-nickname"></text> -->
-      <view class="wait-login">
+      <text wx:if="{{userInfo != undefined}}" class="user-nickname">{{userInfo.nickName}}</text>
+      <view class="wait-login" wx:else="" >
         <view class="arrow-btn" bindtap="goLogin">
-          {{userInfo && userInfo.nickName ? userInfo.nickName : '立即登陆' }} 
-          <image wx:if="{{userInfo==undefined}}" class="arrow-btn--img" src="/sources/my/arrowright-black.png"/>
+          {{ '立即登陆' }} 
+          <image class="arrow-btn--img" src="/sources/my/arrowright-black.png"/>
         </view>
-        <text wx:if="{{userInfo==undefined}}" class="wait-login-text">欢迎使用贝芙汀，登陆体验更多</text>
+        <text class="wait-login-text">欢迎使用贝芙汀，登陆体验更多</text>
       </view>
     </view>
     <view class="perfect-tips">
