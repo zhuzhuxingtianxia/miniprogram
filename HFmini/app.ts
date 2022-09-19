@@ -35,6 +35,34 @@ App({
       
     }
     
+    this.handleGetLocation()
 
   },
+  handleGetLocation () {
+    //获取位置
+    wx.getLocation({
+      type: 'gcj02', //默认为 wgs84 返回 gps 坐标，gcj02 返回可用于wx.openLocation的坐标
+      success: (res) => {
+        console.log(res)
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
+  // 获取位置权限
+  getLocationAuthorize() {
+    //初始获取定位权限
+    wx.authorize({
+      scope: 'scope.userLocation',
+      success: (res) => {
+       console.log(res)
+      },
+      fail: (err) => {
+       console.log(err)
+      }
+    })
+
+  },
+
 })
