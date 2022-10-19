@@ -19,13 +19,16 @@
     "lib": ["ES2020"],
     "typeRoots": [
       "./typings"
-    ]
+    ],
+    "outDir": "./"
   },
   "include": [
     "./**/*.ts",
     "./**/*.js"  
     ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "miniprogram_npm",
+    "dist"
   ]
 }
