@@ -72,7 +72,7 @@ Router({
   // 提交图片
   commitClick() {
     console.log('commitClick')
-    const check = this.data.configs.some(i => { return i.img.length == 0 })
+    const check = this.data.configs.some((i: { img: string | any[] }) => { return i.img.length == 0 })
     if (check) {
       this.setData({
         check: check
