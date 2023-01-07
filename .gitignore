@@ -13,7 +13,7 @@
 # misc
 .DS_Store
 
-/TDesign
+TDesign
 
 npm-debug.log*
 yarn-debug.log*
