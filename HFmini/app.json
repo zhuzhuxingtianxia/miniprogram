@@ -12,6 +12,12 @@
     "pages/home/ai-camera/index",
     "pages/user/order-list/index"
   ],
+  "subpackages":[
+    {
+      "root":"",
+      "pages":[]
+    }
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
