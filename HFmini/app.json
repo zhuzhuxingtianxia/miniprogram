@@ -14,7 +14,7 @@
   ],
   "subpackages":[
     {
-      "root":"",
+      "root":"packageA",
       "pages":[]
     }
   ],
